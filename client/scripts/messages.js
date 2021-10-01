@@ -5,9 +5,22 @@
 var Messages = {
 
   // TODO: Define how you want to store your messages.
-  _data: null,
+  // messages should be stored as objects
+  _data: {},
 
   // TODO: Define methods which allow you to retrieve from,
   // add to, and generally interact with the messages.
+
+  // get messages - return current messages
+
+  // get: function() {
+
+  // },
+
+  // add - check if there are new messages and then render them
+
+  add: function() {
+
+  }
 
 };
