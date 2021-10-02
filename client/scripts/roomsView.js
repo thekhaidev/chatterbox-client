@@ -24,9 +24,12 @@ var RoomsView = {
 
       }
     }
+    RoomsView.$select.empty();
+
 
     for (var j = 0; j < roomList.length; j++) {
       var individualRoom = roomList[j];
+
 
       var $rooms = $('<option>').val(individualRoom).text(individualRoom);
       RoomsView.$select.append($rooms);
