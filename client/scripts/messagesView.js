@@ -10,22 +10,35 @@ var MessagesView = {
     // when this view loads.
   },
 
-  render: function() {
+  render: function(messages) {
     // TODO: Render _all_ the messages.
+    for (var i = 0; i < messages.length; i++) {
+
+      var $message = MessageView.render({
+        username: messages[i].username,
+        text: messages[i].text
+
+      });
+      MessagesView.$chats.append($message);
+    }
+    // if (typeof text !== 'string') {
+    //   Document.createTextNode(text: messages[i].text);
+    // }
+    console.log(MessagesView.$chats);
 
   },
-
   renderMessage: function(message) {
     // TODO: Render a single message.
     // create message variable
     // append to chats
-    var $message = MessageView.render({
-      username: message[0].username,
-      text: message[0].text
-    });
+
+    // var $message = MessageView.render({
+    //   username: message[0].username,
+    //   text: message[0].text
+    // });
     // $message.appendTo.$chats;
     console.log(MessagesView.$chats);
-    MessagesView.$chats.prepend($message);
+    // MessagesView.$chats.prepend($message);
 
 
     //prepend messages to $chats

@@ -29,7 +29,8 @@ var FormView = {
 };
 
 var message = {
-  username: 'dripGod the Immortal',
-  text: 'Judge me not by the contents of my social media but by the flavor of my drip',
+  username: 'dripGod the Absolute',
+  text:
+  '<iframe title=\'YouTube video player\' type=\"text/html\" width=\'640\' height=\'390 src=\'https://www.youtube.com/watch?v=8-NcrRzH0vA\'frameborder=\'0\' allowFullScreen></iframe>',
   roomname: 'heavens drip'
 };

@@ -18,3 +18,4 @@ var MessageView = {
 };
 
 
+// If you wish to interpolate a value, and have it be HTML-escaped, use <%- … %>.

@@ -33,7 +33,7 @@ var App = {
       callback();
       // TODO: Use the data to update Messages and Rooms
       // and re-render the corresponding views.
-      MessagesView.renderMessage(data);
+      MessagesView.render(data);
     });
   },
 
