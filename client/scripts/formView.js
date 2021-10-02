@@ -6,14 +6,25 @@ var FormView = {
 
   $form: $('form'),
 
-  initialize: function() {
+  initialize: function () {
     FormView.$form.on('submit', FormView.handleSubmit);
   },
 
-  handleSubmit: function(event) {
+  handleSubmit: function (event) {
     // Stop the browser from submitting the form
     event.preventDefault();
-    Parse.create(message);
+
+    var message = {
+      username: App.username,
+      text: $('#message').val(),
+      roomname: 'heavens drip'// < ------ make dynamic
+
+    };
+
+
+    console.log(message);
+    MessagesView.renderMessage(message);
+    // MessagesView.renderMessage(App.fetch());
 
     // TODO: Currently, this is all handleSubmit does.
     // Make this function actually send a message to the Parse API.
@@ -21,16 +32,10 @@ var FormView = {
     console.log('click!');
   },
 
-  setStatus: function(active) {
+  setStatus: function (active) {
     var status = active ? 'true' : null;
     FormView.$form.find('input[type=submit]').attr('disabled', status);
   }
 
 };
 
-var message = {
-  username: 'dripGod the Absolute',
-  text:
-  '<iframe title=\'YouTube video player\' type=\"text/html\" width=\'640\' height=\'390 src=\'https://www.youtube.com/watch?v=8-NcrRzH0vA\'frameborder=\'0\' allowFullScreen></iframe>',
-  roomname: 'heavens drip'
-};

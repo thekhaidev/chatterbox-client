@@ -24,7 +24,7 @@ var MessagesView = {
     // if (typeof text !== 'string') {
     //   Document.createTextNode(text: messages[i].text);
     // }
-    console.log(MessagesView.$chats);
+    // console.log(MessagesView.$chats);
 
   },
   renderMessage: function(message) {
@@ -32,12 +32,19 @@ var MessagesView = {
     // create message variable
     // append to chats
 
+    var $message = MessageView.render(message);
+    MessagesView.$chats.append($message);
+    // Parse.create(message);
+
+    App.fetch(Parse.create(message));
+    // callback();
+
     // var $message = MessageView.render({
     //   username: message[0].username,
     //   text: message[0].text
     // });
     // $message.appendTo.$chats;
-    console.log(MessagesView.$chats);
+    // console.log(MessagesView.$chats);
     // MessagesView.$chats.prepend($message);
 
 

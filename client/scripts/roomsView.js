@@ -9,10 +9,18 @@ var RoomsView = {
   initialize: function() {
     // TODO: Perform any work which needs to be done
     // when this view loads.
+
+
   },
 
-  render: function() {
+  render: function(data) {
     // TODO: Render out the list of rooms.
+    for (var i = 0; i < data.length; i++) {
+      var roomName = data[i].roomname
+    }
+
+    // console.log(data[0].roomname);
+
   },
 
   renderRoom: function(roomname) {

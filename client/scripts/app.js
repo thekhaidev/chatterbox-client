@@ -19,7 +19,6 @@ var App = {
     App.startSpinner();
     App.fetch(App.stopSpinner);
     setInterval(App.fetch, 10000);
-    console.log('STFU SPINNER');
 
 
     // TODO: Make sure the app loads data from the API
@@ -34,6 +33,7 @@ var App = {
       // TODO: Use the data to update Messages and Rooms
       // and re-render the corresponding views.
       MessagesView.render(data);
+      RoomsView.render(data);
     });
   },
 
@@ -43,7 +43,7 @@ var App = {
   },
 
   stopSpinner: function() {
-    console.log('STFU SPINNER');
+    // console.log('STFU SPINNER');
     App.$spinner.fadeOut('fast');
     FormView.setStatus(false);
   }
