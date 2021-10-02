@@ -10,15 +10,30 @@ var RoomsView = {
     // TODO: Perform any work which needs to be done
     // when this view loads.
 
-
+  // RoomsView.$select.val(roomList);
   },
 
   render: function(data) {
+
+    var roomList = [];
     // TODO: Render out the list of rooms.
     for (var i = 0; i < data.length; i++) {
-      var roomName = data[i].roomname
+      var roomName = data[i].roomname;
+      if (!roomList.includes(roomName) && roomName) {
+        roomList.push(roomName);
+
+      }
     }
 
+    for (var j = 0; j < roomList.length; j++) {
+      var individualRoom = roomList[j];
+
+      var $rooms = $('<option>').val(individualRoom).text(individualRoom);
+      RoomsView.$select.append($rooms);
+
+    }
+    // console.log(roomList);
+    console.log($rooms);
     // console.log(data[0].roomname);
 
   },
