@@ -5,14 +5,18 @@
 var Rooms = {
 
   setRoomAs: function(messagesArray) {
-    // for loop
-    //
-    // assign them to Rooms._data[roomname] = element
-    console.log('messagesArray', messagesArray);
+
     for (var i = 0; i < messagesArray.length; i++) {
-      Rooms._data[messagesArray[i].roomname] = messagesArray[i];
-      console.log(messagesArray[i].roomname);
-      console.log(Rooms._data);
+      // if room key exists
+      // push message to key
+      // if room key does not exist
+      // create room key and push message
+
+      if (Rooms._data[messagesArray[i].roomname]) {
+        Rooms._data[messagesArray[i].roomname].push(messagesArray[i]);
+      } else {
+        Rooms._data[messagesArray[i].roomname] = [];
+      }
     }
   },
   // TODO: Define how you want to store the list of rooms
@@ -22,8 +26,18 @@ var Rooms = {
   // mark a room as selected, etc.
   // simultaneously send them to data store and messagerender
 
+  /*
+  {
+    dripgod : [],
+    notsodrippy : [],
+    quintonsplayhous : [],
+  }
+  */
+
   // data . roomname can be a specific store for message items in a value where the roomname is the key
 
 
 
 };
+
+console.log(Rooms._data);
