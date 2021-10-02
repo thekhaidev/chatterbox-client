@@ -8,11 +8,16 @@ var MessagesView = {
   initialize: function() {
     // TODO: Perform any work which needs to be done
     // when this view loads.
+
+
+    // if ( selectedroom is not lobby continue with the se)
+
   },
 
   render: function(messages) {
     // TODO: Render _all_ the messages.
     for (var i = 0; i < messages.length; i++) {
+
 
       var $message = MessageView.render({
         username: messages[i].username,
@@ -34,9 +39,9 @@ var MessagesView = {
 
     var $message = MessageView.render(message);
     MessagesView.$chats.append($message);
-    // Parse.create(message);
+    Parse.create(message);
 
-    App.fetch(Parse.create(message));
+    // App.fetch(Parse.create(message));
     // callback();
 
     // var $message = MessageView.render({

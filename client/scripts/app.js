@@ -34,6 +34,8 @@ var App = {
       // and re-render the corresponding views.
       MessagesView.render(data);
       RoomsView.render(data);
+      Rooms.setRoomAs(data);
+
     });
   },
 

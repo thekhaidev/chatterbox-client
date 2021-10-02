@@ -11,9 +11,30 @@ var RoomsView = {
   initialize: function() {
     // TODO: Perform any work which needs to be done
     // when this view loads.
+    RoomsView.$select.on( 'change', () => {
+      var selectedRoom = RoomsView.$select.val();
+      MessagesView.initialize(selectedRoom);
+    });
 
-    RoomsView.$select.val();
   },
+
+  /*
+      // console.log(RoomsView.$select.val());
+      console.log(dataArray);
+      var selectedRooms = [];
+      console.log(data, 'data???');
+
+      for (var i = 0; i < data.length; i++) {
+        console.log(data[i]);
+        if (data[i].roomname === selectedRoom) {
+          selectedRooms.push(data[i]);
+        }
+      }
+      MessagesView.$chats.empty();
+      console.log(selectedRooms);
+      MessagesView.render(selectedRooms);
+
+  */
 
   render: function(data) {
     var roomList = [];
@@ -35,7 +56,6 @@ var RoomsView = {
     //
 
     for (var j = 0; j < roomList.length; j++) {
-
       RoomsView.renderRoom(roomList[j]);
     }
 
