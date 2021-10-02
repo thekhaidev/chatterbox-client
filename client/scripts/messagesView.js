@@ -5,12 +5,18 @@ var MessagesView = {
 
   $chats: $('#chats'),
 
-  initialize: function() {
+  initialize: function(selectedRoom) {
     // TODO: Perform any work which needs to be done
     // when this view loads.
 
+    // search rooms._data for selected room
+    // invoke messagesview.render on selected room
+    if (Rooms._data[selectedRoom]) {
+      MessagesView.$chats.empty();
+      MessagesView.render(Rooms._data[selectedRoom]);
+      console.log(Rooms._data[selectedRoom]);
+    }
 
-    // if ( selectedroom is not lobby continue with the se)
 
   },
 
